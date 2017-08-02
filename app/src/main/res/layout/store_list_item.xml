@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/storeImg"
+            android:layout_width="50dp"
+            android:layout_height="65dp"
+            android:src="@mipmap/ic_launcher"/>
+        <LinearLayout
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/storeNameTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="피자헛-혜화점"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/star1Img"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:src="@drawable/fill_star"/>
+                <ImageView
+                    android:id="@+id/star2Img"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:src="@drawable/fill_star"/>
+                <ImageView
+                    android:id="@+id/star3Img"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:src="@drawable/fill_star"/>
+                <ImageView
+                    android:id="@+id/star4Img"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:src="@drawable/fill_star"/>
+                <ImageView
+                    android:id="@+id/star5Img"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:src="@drawable/fill_star"/>
+                <TextView
+                    android:id="@+id/ratingAvgTxt"
+                    android:layout_marginLeft="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4.5점 / 42건의 리뷰"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/openAndCloseTimeTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="11:00 - 22:30"/>
+                <TextView
+                    android:layout_marginTop="2dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#DDDDDD"/>
+                <TextView
+                    android:id="@+id/minCostTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12,000원 이상 배달"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="5dp">
+        <ImageView
+            android:id="@+id/cescoImg"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/cesco"/>
+        <TextView
+            android:id="@+id/payMethodTypeTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textColor="#DC1400"
+            android:text="요기서 결제"/>
+
+    </LinearLayout>
+
+</LinearLayout>
