@@ -12,6 +12,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
 import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
 import java.util.List;
@@ -83,6 +85,8 @@ public class StoreAdapter extends ArrayAdapter<StoreData>{
         // set?? 를 해준다. ?? 는 뷰의 종류와 상황에 따라 다르다.
         // 실제 데이터? data (StoreData) 변수
         // data가 가진 메쏘드들 중 게터를 활용하는 경우가 많다.
+
+        Glide.with(mContext).load(data.getImagePath()).into(storeImg);
 
         storeNameTxt.setText(data.getStoreName());
         ratingAvgTxt.setText(data.getAvgRating()+"점 / " +data.getReviews().size()+"개의 리뷰");
