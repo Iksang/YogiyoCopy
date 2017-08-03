@@ -7,9 +7,12 @@ import android.widget.ListView;
 import android.widget.TabHost;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
+import kr.co.tjeit.yogiyocopy.adapter.OrderAdapter;
 import kr.co.tjeit.yogiyocopy.adapter.StoreAdapter;
+import kr.co.tjeit.yogiyocopy.data.OrderData;
 import kr.co.tjeit.yogiyocopy.data.StoreData;
 
 public class MainActivity extends AppCompatActivity {
@@ -22,12 +25,22 @@ public class MainActivity extends AppCompatActivity {
 
     StoreAdapter storeAdapter;
 
+    private ListView orderListView;
+
+    List<OrderData> orderDataList = new ArrayList<>();
+
+    OrderAdapter orderAdapter;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         myTabHost = (TabHost)findViewById(R.id.myTabHost);
         myTabHost.setup();
+
+
+        orderListView = (ListView)findViewById(R.id.orderListView);
 
         storeListView = (ListView)findViewById(R.id.storeListView);
 
@@ -45,6 +58,10 @@ public class MainActivity extends AppCompatActivity {
         spec3.setContent(R.id.tab3);
         myTabHost.addTab(spec3);
 
+        TabHost.TabSpec spec4 = myTabHost.newTabSpec("tab4").setIndicator("...");
+        spec4.setContent(R.id.tab4);
+        myTabHost.addTab(spec4);
+
 
 
         storeDataList.add(new StoreData("https://s3.ap-northeast-2.amazonaws.com/slws3/imgs/tje_practice/kyochon_logo.jpg", "교촌치킨-대학로점",4.2f,1200,2330,15000,true));
@@ -56,6 +73,21 @@ public class MainActivity extends AppCompatActivity {
 
         storeAdapter = new StoreAdapter(MainActivity.this, storeDataList);
         storeListView.setAdapter(storeAdapter);
+
+        orderDataList.add(new OrderData(storeDataList.get(0), Calendar.getInstance(), "종로 3가", 15000));
+        orderDataList.add(new OrderData(storeDataList.get(0), Calendar.getInstance(), "종로 1가", 10000));
+        orderDataList.add(new OrderData(storeDataList.get(0), Calendar.getInstance(), "을지로 3가", 30000));
+
+//         원할머니 보쌈 2번, 훼미리피자 1번, 스쿨스토어 2번
+        orderDataList.add(new OrderData(storeDataList.get(1), Calendar.getInstance(), "종로 1가", 30000));
+        orderDataList.add(new OrderData(storeDataList.get(1), Calendar.getInstance(), "종로 2가", 15000));
+        orderDataList.add(new OrderData(storeDataList.get(4), Calendar.getInstance(), "종로 3가", 15000));
+        orderDataList.add(new OrderData(storeDataList.get(2), Calendar.getInstance(), "종로 4가", 11000));
+        orderDataList.add(new OrderData(storeDataList.get(2), Calendar.getInstance(), "종로 5가", 10000));
+
+        orderAdapter = new OrderAdapter(MainActivity.this, orderDataList);
+        orderListView.setAdapter(orderAdapter);
+
 
     }
 }
