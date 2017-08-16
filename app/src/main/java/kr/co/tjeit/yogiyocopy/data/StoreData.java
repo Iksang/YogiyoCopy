@@ -1,5 +1,6 @@
 package kr.co.tjeit.yogiyocopy.data;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,7 +8,7 @@ import java.util.List;
  * Created by tjoeun on 2017-08-02.
  */
 
-public class StoreData {
+public class StoreData implements Serializable {
 
     private String imagePath;
     private String storeName;
@@ -16,13 +17,17 @@ public class StoreData {
     private int closeTime;
     private int minCost;
     private boolean isCesco;
+    private String corpNumber; // 사업자등록번호 204-28-86905
+    private String corpName; // 상호명
     private List<String> reviews = new ArrayList<>();
+    private List<MenuData> menuDatas = new ArrayList<>();
+
+
 
     public StoreData() {
-
     }
 
-    public StoreData(String imagePath, String storeName, float avgRating, int openTime, int closeTime, int minCost, boolean isCesco) {
+    public StoreData(String imagePath, String storeName, float avgRating, int openTime, int closeTime, int minCost, boolean isCesco, String corpNumber, String corpName) {
         this.imagePath = imagePath;
         this.storeName = storeName;
         this.avgRating = avgRating;
@@ -30,6 +35,8 @@ public class StoreData {
         this.closeTime = closeTime;
         this.minCost = minCost;
         this.isCesco = isCesco;
+        this.corpNumber = corpNumber;
+        this.corpName = corpName;
     }
 
     public String getImagePath() {
@@ -88,11 +95,35 @@ public class StoreData {
         isCesco = cesco;
     }
 
+    public String getCorpNumber() {
+        return corpNumber;
+    }
+
+    public void setCorpNumber(String corpNumber) {
+        this.corpNumber = corpNumber;
+    }
+
+    public String getCorpName() {
+        return corpName;
+    }
+
+    public void setCorpName(String corpName) {
+        this.corpName = corpName;
+    }
+
     public List<String> getReviews() {
         return reviews;
     }
 
     public void setReviews(List<String> reviews) {
         this.reviews = reviews;
+    }
+
+    public List<MenuData> getMenuDatas() {
+        return menuDatas;
+    }
+
+    public void setMenuDatas(List<MenuData> menuDatas) {
+        this.menuDatas = menuDatas;
     }
 }
